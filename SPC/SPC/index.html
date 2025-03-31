@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="images/OIP-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>State Pharmaceutical Cooperation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        
+        .logo-text {
+            margin-left: 10px;
+        }
+        
+        .logo-text h1 {
+            color: #0088cc;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 14px;
+            color: #444;
+            margin-top: 5px;
+        }
+        
+        /* Navigation Styles */
+        nav {
+            display: flex;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 58px;
+            margin-top: 47px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #007bff;
+            transition: width 0.5s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #0088cc;
+            position: relative;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/pharmacy-medical-shop-concept_74855-7815.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: white;
+            color: #0088cc;
+        }
+        
+        .btn-primary:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .btn-secondary {
+            background-color: #0088cc;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #0077b3;
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .partners h3 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        
+        .partner-logos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .partner-logo {
+            width: 140px;
+            height: 140px;
+            background-color: #e6e6e6;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .partner-logo:hover {
+            transform: scale(1.2);
+            transition: 0.5s;
+        }
+        
+        /* For demonstration of pharmacy background in hero section */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/pharmacy-medical-shop-concept_74855-7815.jpg');
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .title h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        .about-intro {
+            display: flex;
+            align-items: center;
+            margin-bottom: 80px;
+            margin-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            background-color: #ddd;
+            border-radius: 0 100px 100px 0;
+            height: 260px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 100px 100px 0;
+        }
+        .about-text {
+            flex: 1;
+            padding-left: 30px;
+            text-align: right;
+        }
+        
+        .about-text h3 {
+            color: #0088cc;
+            font-size: 24px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        
+        .since-year {
+            color: #2c3e50;
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 60px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        
+        .feature {
+            flex: 2;
+            text-align: center;
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .feature h4 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* About Description */
+        .about-description {
+            margin-bottom: 60px;
+            line-height: 1.8;
+            margin: 30px;
+        }
+        
+        .about-description p {
+            font-size: 16px;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .contact-banner {
+            width: 100%;
+            height: 260px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .contact-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+
+        .contact-columns {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-box {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-box h3 {
+            color: #0088cc;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .feedback-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .feedback-section h3 {
+            color: #0088cc;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social-media {
+            margin-top: 30px;
+        }
+
+        .assistance-note {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f7ff;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .assistance-note p {
+            color: #0088cc;
+            font-weight: 500;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+        .contact-columns {
+            flex-direction: column;
+        }
+    
+        .contact-box {
+            width: 100%;
+        }
+        }
+
+        /* Locations Section Styles */
+        .locations-section {
+            padding: 50px 0;
+            background-color: #ffffff;
+        }
+
+        .location-subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .location-subtitle h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .map-container {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 450px;
+            background-color: #ddd;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            font-size: 20px;
+        }
+
+        .location-finder {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 20px 0 0 20px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #0088cc;
+        }
+
+        .search-btn {
+            padding: 12px 20px;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #006699;
+        }
+
+        .pharmacy-locations {
+            margin-top: 30px;
+        }
+
+        .pharmacy-locations h3 {
+            text-align: center;
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .location-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .location-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: calc(33.33% - 30px);
+            min-width: 300px;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .location-icon {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .location-icon img {
+            width: 60px;
+            height: auto;
+        }
+
+        .location-card h4 {
+            font-size: 20px;
+            color: #0088cc;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .location-card p {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .location-btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #f5f5f5;
+            color: #0088cc;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .location-btn:hover {
+            background-color: #0088cc;
+            color: white;
+        }
+
+        .view-more {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #e6f7ff;
+            padding: 50px 0 20px;
+            color: #333;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .logo {
+            width: 210px;
+            height: auto;
+        }
+
+        .footer-title {
+            margin-left: 4px;
+        }
+
+        .footer-title h3 {
+            color: #0088cc;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .footer-title p {
+            font-size: 12px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 70px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #0088cc;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #0088cc;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #0088cc;
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: #006699;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #c4e4f5;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+        .location-card {
+            width: calc(50% - 30px);
+        }
+    
+        .footer-content {
+            flex-direction: column;
+        }
+    
+        .footer-links {
+            margin-top: 30px;
+        }
+    }
+
+        @media (max-width: 768px) {
+        .location-card {
+            width: 100%;
+        }
+    
+        .search-box {
+            flex-direction: column;
+        }
+    
+        .search-box input {
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+    
+        .search-btn {
+            border-radius: 50px;
+        }
+    
+        .footer-links {
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="home">
+        <header>
+            <div class="logo-container">
+                <img src="images/OIP-removebg-preview.png" alt="SPC Logo" class="logo">
+                <div class="logo-text">
+                    <h1>State Pharmaceutical<br>Cooperation</h1>
+                    <p class="tagline">Your Health Is Our Concern</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#about-us">ABOUT US</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#locations">LOCATIONS</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    
+    <section class="hero">
+        <h2>Ensuring National Health Through Innovative Pharmaceutical Solutions</h2>
+        <div class="hero-buttons">
+            <a href="register.php" class="btn btn-primary">Register Now</a>
+            <a href="login.php" class="btn btn-secondary">Login Now</a>
+        </div>
+    </section>
+    
+    <section class="partners">
+        <div class="container">
+            <h3>OUR PARTNERS</h3>
+            <div class="partner-logos">
+                <img src="images/OIP (1).jpg" alt="Partner Logo" class="partner-logo">
+                <img src="images/health-guardlogo.jpg" alt="Partner Logo" class="partner-logo">
+                <img src="images/i9nFmg1PotRcyJhF_7.png" alt="Partner Logo" class="partner-logo">
+                <img src="images/astron.png" alt="Partner Logo" class="partner-logo">
+                <img src="images/1519916244794.jpg" alt="Partner Logo" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about-us">
+        <div class="title">
+            <h2>ABOUT US</h2>
+        </div>
+        
+        <div class="about-intro">
+            <div class="about-image">
+               <img src="images/about-us-main-pic.jpg" alt="Drugs">
+            </div>
+            <div class="about-text">
+                <h3>SPC Enhances National Healthcare With Innovative Pharmaceuticals, Advanced Manufacturing, And Efficient Distribution.</h3>
+                <div class="since-year">Since 1957</div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-image">
+                    <img src="images/pharmacist-work_23-2150600094.jpg" alt="Pharmacist Work">
+                </div>
+                <h4>Reliable Service</h4>
+                <p>Committed To Providing Timely And Accurate Pharmaceutical Services.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-image">
+                    <img src="images/full-service.jpg" alt="24/7 Support">
+                </div>
+                <h4>24/7 Support</h4>
+                <p>Round-The-Clock Customer Service For Emergency Requirements</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-image">
+                    <img src="images/drug-inventory.jpg" alt="Drug Inventory">
+                </div>
+                <h4>Quality Assurance</h4>
+                <p>Maintaining High Standards In Pharmaceutical Storage And Handling.</p>
+            </div>
+        </div>
+        
+        <div class="about-description">
+            <p>State Pharmaceuticals Corporation (SPC) is a leading government-owned entity dedicated to ensuring affordable, 
+                high-quality medicines for the nation. With a strong focus on innovation, advanced pharmaceutical manufacturing, 
+                and an efficient distribution network, SPC plays a vital role in strengthening national healthcare. Committed to excellence, 
+                we collaborate with global and local partners to provide safe, effective, and accessible medical solutions. Our mission is to 
+                enhance public health by maintaining stringent quality standards, promoting research, and ensuring uninterrupted access to essential medicines across the country.</p>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="title">
+                <h2>CONTACT US</h2>
+            </div>
+            <div class="contact-banner">
+                <img src="images/contactUs.jpg" alt="contact-banner">
+            </div>
+            <div class="contact-columns">
+                <div class="contact-box">
+                    <h3>Head Office:</h3>
+                    <p>📍 State Pharmaceuticals Corporation (SPC)</p>
+                    <p>MHCS Building, 75, Sir Baron Jayathilake Mawatha, Colombo 01</p>
+                    <p>00100 - Colombo</p>
+                    <p>Sri Lanka</p>
+                    <p>📞 Phone: [+94 (11) 2320356-9]</p>
+                    <p>📠 Fax: [+94 (11) 2447118]</p>
+                    <p>📧 Email: [info@spc.lk]</p>
+                    <p>🕒 Office Hours:</p>
+                    <p>Monday - Friday: 8:30 AM - 4:30 PM</p>
+                    <p>Saturday & Sunday: Closed</p>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>Customer Support</h3>
+                    <p>📞 Hotline: [+94 (11) 2420651]</p>
+                    <p>📧 Email: [support@spc.lk]</p>
+                    <p>For inquiries regarding pharmaceutical products, availability, or general support, our team is ready to assist you.</p>
+                </div>
+                
+                <div class="contact-box">
+                    <h3>Supplier & Business Inquiries</h3>
+                    <p>📧 Email: [procurement@spc.lk]</p>
+                    <p>For tenders, procurement details, and supplier partnerships.</p>
+                    <h3>Distribution & Logistics</h3>
+                    <p>📞 Phone: [+94 (11) 2320452]</p>
+                    <p>📧 Email: [logistics@spc.lk]</p>
+                    <p>For distribution-related queries, bulk orders, and transportation details.</p>
+                </div>
+            </div>
+            
+            <div class="feedback-section">
+                <h3>Feedback & Complaints</h3>
+                <p>📧 Email: [feedback@spc.lk]</p>
+                <p>We value your feedback! Share your concerns or suggestions to help us improve our services.</p>
+                
+                <div class="social-media">
+                    <h3>Follow Us on Social Media:</h3>
+                    <p>📌 Facebook: [facebook.com/SPCOfficial]</p>
+                    <p>📌 Twitter: [twitter.com/SPC_Official]</p>
+                    <p>📌 LinkedIn: [linkedin.com/company/SPC]</p>
+                </div>
+                
+                <div class="assistance-note">
+                    <p>Need assistance? Feel free to contact us via phone, email, or visit our office! 💙</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations-section" id="locations">
+        <div class="container">
+            <div class="title">
+                <h2>LOCATIONS</h2>
+            </div>
+            
+            <div class="location-subtitle">
+                <h3>See The Nearest Pharmacy To You</h3>
+            </div>
+            
+            <div class="map-container">
+                
+                <div class="map-placeholder">
+                    <!-- Map image would go here -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d63387.45341923852!2d79.87717488154084!3d6.804381433606246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sspc%20pharmacies!5e0!3m2!1sen!2slk!4v1742793631659!5m2!1sen!2slk" 
+                    width="1500" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+            <div class="location-finder">
+                <div class="search-box">
+                    <input type="text" placeholder="Enter your city or district">
+                    <button class="search-btn">Find Nearest Pharmacy</button>
+                </div>
+            </div>
+            
+            <div class="pharmacy-locations">
+                <h3>Our Pharmacy Locations in Sri Lanka</h3>
+                
+                <div class="location-grid">
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <img src="images/OIP-removebg-preview.png" alt="Pharmacy Icon">
+                        </div>
+                        <h4>Colombo - Main Branch</h4>
+                        <p>75, Sir Baron Jayatilaka Mawatha, Colombo 01</p>
+                        <p>📞 +94 11 232 5171</p>
+                        <p>⏰ 8:30 AM - 8:30 PM (Daily)</p>
+                        <a href="https://maps.app.goo.gl/Ww8NB3UmcnMYG2y78" class="location-btn">Get Directions</a>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <img src="images/OIP-removebg-preview.png" alt="Pharmacy Icon">
+                        </div>
+                        <h4>Kandy</h4>
+                        <p>14 Lamagaraya Rd, Kandy</p>
+                        <p>📞 +94 81 221 5678</p>
+                        <p>⏰ 8:30 AM - 8:00 PM (Daily)</p>
+                        <a href="https://maps.app.goo.gl/4vaSddL2SzAbikTk8" class="location-btn">Get Directions</a>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <img src="images/OIP-removebg-preview.png" alt="Pharmacy Icon">
+                        </div>
+                        <h4>Galle</h4>
+                        <p>42, Wakwella Road, Galle</p>
+                        <p>📞 +94 91 224 3456</p>
+                        <p>⏰ 8:30 AM - 7:30 PM (Daily)</p>
+                        <a href="https://maps.app.goo.gl/uD83U7Cvxi7GLqW98" class="location-btn">Get Directions</a>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <img src="images/OIP-removebg-preview.png" alt="Pharmacy Icon">
+                        </div>
+                        <h4>Jaffna</h4>
+                        <p>125, Hospital Road, Jaffna</p>
+                        <p>📞 +94 21 222 7890</p>
+                        <p>⏰ 8:30 AM - 7:00 PM (Daily)</p>
+                        <a href="https://maps.app.goo.gl/Hxr3oWbdLDxumMxh6" class="location-btn">Get Directions</a>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <img src="images/OIP-removebg-preview.png" alt="Pharmacy Icon">
+                        </div>
+                        <h4>Negombo</h4>
+                        <p>78, Lewis Place, Negombo</p>
+                        <p>📞 +94 31 223 4567</p>
+                        <p>⏰ 8:30 AM - 8:00 PM (Daily)</p>
+                        <a href="https://maps.app.goo.gl/xc21wPadYJbbFoEF8" class="location-btn">Get Directions</a>
+                    </div>
+                    
+                    <div class="location-card">
+                        <div class="location-icon">
+                            <img src="images/OIP-removebg-preview.png" alt="Pharmacy Icon">
+                        </div>
+                        <h4>Matara</h4>
+                        <p>35, Anagarika Dharmapala Mawatha, Matara</p>
+                        <p>📞 +94 41 222 8901</p>
+                        <p>⏰ 8:30 AM - 7:30 PM (Daily)</p>
+                        <a href="https://maps.app.goo.gl/EFgfEUrQEdtEEcWq8" class="location-btn">Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="view-more">
+                    <a href="https://maps.app.goo.gl/EbNLEbRz6tZvq65d8" class="btn btn-secondary">View All Locations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/OIP-removebg-preview.png" alt="SPC Logo" class="logo">
+                    <div class="footer-title">
+                        <h3>State Pharmaceutical<br>Cooperation</h3>
+                        <p>Your Health Is Our Concern</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about-us">About Us</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#locations">Locations</a></li>
+                            <li><a href="login.php">Track Orders</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://web.facebook.com/spclkofficial/?_rdc=1&_rdr#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/state-pharmaceuticals-corporation/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal & Policies</h4>
+                        <ul>
+                            <li><a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a></li>
+                            <li><a href="#" class="policy-link" data-policy="terms">Terms & Conditions</a></li>
+                            <li><a href="#" class="policy-link" data-policy="refund">Refund & Return Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© <script>document.write(new Date().getFullYear())</script> State Pharmaceuticals Corporation. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pharmacy-search.js"></script> <!--JavaScript file for pharmacy search functionality-->
+
+    <script>
+    // JavaScript to handle the popup for policy links
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all policy links and add click event listeners
+    const policyLinks = document.querySelectorAll('.policy-link');
+    
+    policyLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const policyType = this.getAttribute('data-policy');
+            openPolicyPopup(policyType);
+        });
+    });
+    
+    // Function to open the popup window
+    function openPolicyPopup(policyType) {
+        // Set popup dimensions
+        const width = 800;
+        const height = 600;
+        
+        // Calculate position to center the popup
+        const left = (window.innerWidth - width) / 2;
+        const top = (window.innerHeight - height) / 2;
+        
+        // Open the popup window
+        window.open(
+            'terms_policy_pdf.php?policy=' + policyType,
+            'PolicyDocument',
+            `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes,status=no,toolbar=no,menubar=no,location=no`
+        );
+    }
+});
+    </script>
+</body>
+</html>
