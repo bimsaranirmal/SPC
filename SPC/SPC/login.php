@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if ($email === "yakshanii@gmail.com" && $password === "yakshanii123") {
+    if ($email === "admin@gmail.com" && $password === "admin123") {
         $_SESSION['user_type'] = "admin";
         header("Location: admin_home.php");
         exit();
